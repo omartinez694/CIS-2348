@@ -1,9 +1,13 @@
 import csv
-
-with open('input1.csv', mode='r') as wordsfile:
-    words_reader = csv.reader(wordsfile)
-for row in words_reader:
-    list_of_words = set(row)
-    for word in list_of_words:
-        count = row.count(word)
-        print(word, count)
+file = input()
+freqlist = {}
+with open(file, 'r') as cvsfile:
+    words_reader = csv.reader(cvsfile)
+    row = next(words_reader)
+    for word in row:
+        if word in freqlist:
+            freqlist[word] += 1
+        else:
+            freqlist[word]=1
+for w in freqlist:
+    print (w, freqlist[w])
