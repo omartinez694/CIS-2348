@@ -1,29 +1,30 @@
 #Martinez_Omar_psid#1484888
 
 class ItemToPurchase:
+    #define
     def __init__(self, item_name='none', item_price=0, item_quantity=0, item_description='none'):
         self.item_name = item_name
         self.item_price = item_price
         self.item_quantity = item_quantity
         self.item_description = item_description
-
+#define
     def print_item_cost(self):
         string = '{} {} @ ${} = ${}'.format(self.item_name, self.item_quantity, self.item_price, (self.item_quantity * self.item_price))
         cost = self.item_quantity * self.item_price
         return string, cost
-
+#define
     def print_item_description(self):
         string = '{}: {}'.format(self.item_name, self.item_description)
         print(string, end='\n')
         return string
 
-
+#defines
 class ShoppingCart:
     def __init__(self, customer_name='none', current_date='January 1, 2016', cart_items=[]):
         self.customer_name = customer_name
         self.current_date = current_date
         self.cart_items = cart_items
-
+#define
     def add_item(self, string):
         print('\nADD ITEM TO CART', end='\n')
         item_name = str(input('Enter the item name:'))
@@ -31,7 +32,7 @@ class ShoppingCart:
         item_price = int(input('\nEnter the item price:'))
         item_quantity = int(input('\nEnter the item quantity:'))
         self.cart_items.append(ItemToPurchase(item_name, item_price, item_quantity, item_description))
-
+#define
     def remove_item(self):
         print('REMOVE ITEM FROM CART', end='\n')
         string = str(input('Enter name of item to remove:'))
@@ -46,7 +47,7 @@ class ShoppingCart:
                 flag = False
         if (flag == False):
             print('Item not found in cart. Nothing removed.')
-
+#define
     def modify_item(self):
         print('\nCHANGE ITEM QUANTITY', end='\n')
         name = str(input('Enter the item name:'))
@@ -60,13 +61,13 @@ class ShoppingCart:
                 flag = False
         if (flag == False):
             print('Item not found in cart. Nothing modified')
-
+#define
     def get_num_items_in_cart(self):
         num_items = 0
         for item in self.cart_items:
             num_items = num_items + item.item_quantity
         return num_items
-
+#define
     def get_cost_of_cart(self):
         total_cost = 0
         cost = 0
@@ -74,21 +75,21 @@ class ShoppingCart:
             cost = (item.item_quantity * item.item_price)
             total_cost += cost
         return total_cost
-
+#define
     def print_total(self):
         total_cost = self.get_cost_of_cart()
         if (total_cost == 0):
             print('SHOPPING CART IS EMPTY')
         else:
             self.output_cart()
-
+#define
     def print_descriptions(self):
         print('\nOUTPUT ITEMS\' DESCRIPTIONS')
         print('{}\'s Shopping Cart - {}'.format(self.customer_name, self.current_date), end='\n')
         print('\nItem Descriptions', end='\n')
         for item in self.cart_items:
             print('{}: {}'.format(item.item_name, item.item_description), end='\n')
-
+#define
     def output_cart(self):
         new = ShoppingCart()
         print('\nOUTPUT SHOPPING CART', end='\n')
@@ -101,7 +102,7 @@ class ShoppingCart:
             tc += (item.item_quantity * item.item_price)
         print('\nTotal: ${}'.format(tc), end='\n')
 
-
+#define
 def print_menu(ShoppingCart):
     customer_Cart = newCart
     string = ''
