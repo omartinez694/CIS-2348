@@ -1,4 +1,4 @@
-#Martinez_Omat_psid#1484888
+#Martinez_Omar_psid#1484888
 def getJerseyNumber():
     jerseyNumber = int(input("Enter new player's jersey number:"))
     while (jerseyNumber < 0 or jerseyNumber > 99):
