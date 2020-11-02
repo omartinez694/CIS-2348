@@ -2,7 +2,7 @@
 
 class FoodItem:
 
-    # constructor with default values given
+    # values given
     def __init__(self, name=None, fat=0.0, carbs=0.0, protein=0.0):
         # add fields as needed
         self.name = name
@@ -10,11 +10,11 @@ class FoodItem:
         self.carbs = carbs
         self.protein = protein
 
-    # cal info
+    # calorie info
     def get_calories(self, num_servings):
         calories = ((self.fat * 9) + (self.carbs * 4) + self.protein * 4) * num_servings
         return calories
-
+#print info
     def print_info(self):
         print('Nutritional information per serving of {}:'.format(self.name))
         print('   Fat: {:.2f} g'.format(self.fat))
