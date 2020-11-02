@@ -1,16 +1,19 @@
 #Martinez_Omar_psid#1484888
+
+#enter jersey number
 def getJerseyNumber():
     jerseyNumber = int(input("Enter new player's jersey number:"))
     while (jerseyNumber < 0 or jerseyNumber > 99):
         jerseyNumber = int(input("Error! Enter new player's jersey number:"))
     return jerseyNumber
-
+#enter rating
 def getRating():
     rating = int(input("Enter player's rating:"))
     while (rating < 1 or rating > 9):
         rating = int(input("Error! Enter player's rating:"))
     return rating
 
+#the menu
 def menu():
     print("MENU")
     print("a - Add player")
@@ -21,24 +24,24 @@ def menu():
     print("q - Quit")
     choice = input("Choose an option: ")
     return choice[0]
-
+#print the roster like rting jersey number 
 def printRoster(player):
     print("ROSTER")
     for jersey in sorted(player):
         print("Jersey number: ", jersey,", Rating:", player[jersey])
-
+#add a player with number and ratins
 def addPlayer(player):
     jerseyNumber = getJerseyNumber()
     rating = getRating()
     player[jerseyNumber] = rating
-
+#take put a player
 def deletePlayer(player):
     jerseyNumber = getJerseyNumber()
     if jerseyNumber in player:
         player.pop(jerseyNumber)
     else:
         print("Jersey number not found.")
-
+# update the players rating and number
 def updatePlayer(player):
     jerseyNumber = getJerseyNumber()  # get jersey number
     if jerseyNumber in player:  # if jersey number exits in dictionary
